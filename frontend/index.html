@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ONLINE LIBRARY</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+		<script src="https://apis.google.com/js/client.js?onload=handleClientLoad" type="text/javascript"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+	<body>
+		<h1 id="title" class="text-center">Online Library</h1>
+		<div id="input" class="input-group mx-auto col-lg-6 col-md-8 col-sm-12">
+			<input id="search" type="text" class="form-control" placeholder="Title">
+			<button id="button" type="button" class="btn btn-primary">Search</button>
+		</div>
+		<div id="input" class="input-group mx-auto col-lg-6 col-md-8 col-sm-12">
+			<input id="startDate" type="date" class="form-control" placeholder="Start Date">
+			<input id="period" type="number" min="1" class="form-control" placeholder="No. of days">
+			<input id="name" type="text" class="form-control" placeholder="Name">
+			<button id="reserve" type="button" class="btn btn-primary">Reserve</button>
+		</div>
+		<div id="input" class="input-group mx-auto col-lg-2 col-md-8 col-sm-12">
+			<button id="reservations" type="button">See all reservations</button>
+		</div>
+		<div id="showReservations"></div>
+		<div id="results"></div>
+		<div id="videoResults"></div>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+		crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/books.js"></script>
+		<script src="https://apis.google.com/js/client.js?onload=init"></script>
+	</body>
+</html>
