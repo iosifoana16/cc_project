@@ -1,10 +1,12 @@
 const express = require("express")
 const Sequelize = require('sequelize')
 const axios = require("axios")
+let sequelize
 
-const sequelize = new Sequelize('libraries', 'oana', 'oana', {
+sequelize = new Sequelize('libraries', 'oana', 'oana', {
     dialect: "mysql",
-    host: "localhost"
+    host: "localhost",
+    port:3306
 })
 
 sequelize.authenticate().then(() => {
@@ -15,7 +17,6 @@ sequelize.authenticate().then(() => {
 
 //definirea tabelei
 const Reservations = sequelize.define('reservations', { 
-    clientid: {type: Sequelize.INTEGER, unique: true }, 
     name: Sequelize.STRING,
     book: Sequelize.TEXT,
     date: Sequelize.DATEONLY, 

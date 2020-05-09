@@ -9,8 +9,6 @@ function bookSearch(){
                     for( i=0; i< data.items.length; i++){
                 results.innerHTML += "<h4>" + data.items[i].volumeInfo.title+ "</h4>"
             }
-    }).catch(function(error) {
-        console.log(error)
     })
 }
 
@@ -42,9 +40,7 @@ function init(){
 }
 
 function showReservations(){
-        $.get('/reservations').then(function(results) {
-
-        let html = ` <table style="width:500px;">
+        document.getElementById('showReservations').innerHTML =` <table style="width:500px;">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
@@ -52,22 +48,21 @@ function showReservations(){
                     <th>Date</th>
                     <th>Period</th>
                 </tr>`
+        $.get('/reservations').then(function(data) {
+            console.log(data)
+            for( i=0; i< data.length; i++){
+                console.log(data[i])
+                showReservations.innerHTML += 
+                "<tr>"+
+                "<td>"+data[i].id+"</td>"+
+                "<td>"+data[i].name+"</td>"+
+                "<td>"+data[i].book+"</td>"+
+                "<td>"+data[i].date+"</td>"+
+                "<td>"+data[i].period+"</td>"+
+                "</tr>"
+            }
 
-        results.data.forEach(function(element) {
-            html += `<tr>
-                        <td>${element.id}</td>
-                        <td>${element.name}</td>
-                        <td>${element.book}</td>
-                        <td>${element.date}</td>
-                        <td>${element.period}</td>
-                    </tr>`
-        })
-
-        html += `</table>`
-
-        $('#showReservations').html(html)
-    }).catch(function(error) {
-        console.log(error)
+        showReservations.innerHTML += `</table>`
     })
 }
 
@@ -83,7 +78,7 @@ function saveReservation(){
         date: date,
         period: period
     }).then(function(result) {
-        // showReservations()
+        showReservations()
     }).catch(function(err) {
      alert('Resource could not be saved')
     })
