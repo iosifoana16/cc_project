@@ -40,29 +40,35 @@ function init(){
 }
 
 function showReservations(){
-        document.getElementById('showReservations').innerHTML =` <table style="width:500px;">
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Book</th> 
-                    <th>Date</th>
-                    <th>Period</th>
-                </tr>`
+    var showReservationsDiv =document.getElementById('showReservations')
+        showReservationsDiv.innerHTML =` <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Book</th>
+              <th scope="col">Date</th>
+              <th scope="col">Period</th>
+            </tr>
+          </thead>
+          <tbody>`
+          
         $.get('/reservations').then(function(data) {
             console.log(data)
             for( i=0; i< data.length; i++){
                 console.log(data[i])
-                showReservations.innerHTML += 
-                "<tr>"+
-                "<td>"+data[i].id+"</td>"+
-                "<td>"+data[i].name+"</td>"+
-                "<td>"+data[i].book+"</td>"+
-                "<td>"+data[i].date+"</td>"+
-                "<td>"+data[i].period+"</td>"+
-                "</tr>"
+                showReservationsDiv.innerHTML += 
+                `<tr>
+                <th scope="row">${(i+1)}</th>
+                <td style="white-space:nowrap">${data[i].name}</td>
+                <td style="white-space:nowrap">${data[i].book}</td>
+                <td style="white-space:nowrap">${data[i].date}</td>
+                <td style="white-space:nowrap">${data[i].period}</td>
+                </tr>`
             }
 
-        showReservations.innerHTML += `</table>`
+        showReservationsDiv.innerHTML += `</tbody>
+            </table>`
     })
 }
 
