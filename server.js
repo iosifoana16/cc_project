@@ -3,22 +3,11 @@ const Sequelize = require('sequelize')
 const axios = require("axios")
 let sequelize
 
-
-// if(process.env.MYSQLCONNSTR_localdb) {
-//     let result = process.env.MYSQLCONNSTR_localdb.split(";")
-    
-//     sequelize = new Sequelize(result[0].split("=")[1], result[2].split("=")[1], result[3].split("=")[1], {
-//         dialect: "mysql",
-//         host: result[1].split("=")[1].split(":")[0],
-//         port: result[1].split("=")[1].split(":")[1]
-//     })
-// } else {
-    sequelize = new Sequelize('libraries', 'oana', 'iosifoana16', {
-        dialect: "mysql",
-        host: "aa54ha7ed872y2.ctk2urfkyd9j.us-east-1.rds.amazonaws.com",
-        port:3306
-    })
-// }
+sequelize = new Sequelize('libraries', 'oana', 'iosifoana16', {
+    dialect: "mysql",
+    host: "aa54ha7ed872y2.ctk2urfkyd9j.us-east-1.rds.amazonaws.com",
+    port:3306
+})
 
 sequelize.authenticate().then(() => {
     console.log("Connected to database")
