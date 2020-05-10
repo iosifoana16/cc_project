@@ -60,10 +60,10 @@ function showReservations(){
                 showReservationsDiv.innerHTML += 
                 `<tr>
                 <th scope="row">${(i+1)}</th>
-                <td style="white-space:nowrap">${data[i].name}</td>
-                <td style="white-space:nowrap">${data[i].book}</td>
-                <td style="white-space:nowrap">${data[i].date}</td>
-                <td style="white-space:nowrap">${data[i].period}</td>
+                <td>${data[i].name}</td>
+                <td>${data[i].book}</td>
+                <td>${data[i].date}</td>
+                <td>${data[i].period}</td>
                 </tr>`
             }
 
