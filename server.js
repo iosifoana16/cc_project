@@ -5,7 +5,7 @@ let sequelize
 
 sequelize = new Sequelize('libraries', 'oana', 'iosifoana16', {
     dialect: "mysql",
-    host: "aa54ha7ed872y2.ctk2urfkyd9j.us-east-1.rds.amazonaws.com",
+    host: "aa137rjdhs68mpp.ctk2urfkyd9j.us-east-1.rds.amazonaws.com",
     port:3306
 })
 
