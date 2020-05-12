@@ -35,7 +35,7 @@ function videoSearch() {
 }
 
 function init(){
-    gapi.client.setApiKey("AIzaSyCceKcyZW-6vF_s4-b5zNAZcxRxGqaY_lo");
+    gapi.client.setApiKey("AIzaSyBFkCCtRIoJ-ly0bzRTlVu-m1KE0twxg38");
     gapi.client.load("youtube", "v3", function(){ });
 }
 

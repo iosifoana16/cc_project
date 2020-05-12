@@ -13,9 +13,25 @@ Totodata, in urma cautarii unei carti vor fi afisate si videoclipurile relevante
 Toate rezervarile facute pot fi vizualizate in urma unei interogari in baza de date.
 
 ## API-uri folosite
+1. Google Books API
 
+    - contine baza de date din care utilizatorul isi poate alege o carte cautand 
+    dupa titlu sau autor
+    - metoda folosita pentru a apela acest endpoint este GET
 
-### Flux de date
+2. YouTube Data API
+
+    - in urma cautarii utilizatorului, se face un GET catre acest endpoint
+    care va returna cele mai relevante videoclipuri de pe youtube 
+    - request-ul este facut pe baza unui [ApiKey](https://cloud.google.com/docs/authentication/api-keys) 
+    
+ 3. API creat
+ 
+    - utilizatorul poate sa isi rezerve cartea cautata, iar rezervarea este salvata 
+     intr-o baza de date prin intermediul unui POST request
+    - toate rezervarile pot fi vazute in urma unui GET request
+ 
+ - pentru a folosi API-urile de la Google, acestea trebuiesc enablate
 
 ## Pornire aplicatie si utilizare
  Clonarea codului sursa: 
@@ -30,7 +46,12 @@ git clone https://github.com/iosifoana16/cc_project.git
  npm start
  ```
  
+![image](https://github.com/iosifoana16/cc_project/blob/master/project%20images/cc.PNG)
  
+![image](https://github.com/iosifoana16/cc_project/blob/master/project%20images/cc1.JPG)
+
+![image](https://github.com/iosifoana16/cc_project/blob/master/project%20images/cc2.JPG)
+
 
 ## Referinte
 [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/) - pentru formatarea stilurilor HTML
